@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+}
+
+nav#topmenu ul {
+    list-style: none;
+    background-color: #000816;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+}
+
+nav#topmenu li {
+    font-size: 24px;
+    line-height: 40px;
+    height: 40px;
+    padding: 20px;
+}
+
+nav#topmenu a {
+    text-decoration: none;
+    color: #fff;
+}
