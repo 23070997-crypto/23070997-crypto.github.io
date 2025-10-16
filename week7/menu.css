@@ -1,0 +1,15 @@
+.menu{
+    width: 150px;
+    height: 32px;
+    display: table-cell;
+    background: -webkit-linear-gradient(top,#333,#999,#000)repeat-x;
+    border-radius: 20px 20px 0px 0px;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+div ul{
+    color: #000;
+
+}
