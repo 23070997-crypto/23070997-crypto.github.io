@@ -36,7 +36,7 @@
     color: green;
 }
 .lv2{
-    display: none;
+    display:none ;
     position: absolute;
     padding: 0px;
     margin-top: 5px;
