@@ -1,0 +1,57 @@
+#header{
+    background: url(/week7/images/header.jpg);
+    height: 181px;
+    width: 900px;
+    margin-left: 20%;
+    margin-right:25% ;
+}
+#logo {
+    padding: 20px 0px 0px 50px;
+}
+#menutop{
+    margin-top: 55px;
+    margin-left: 30px;
+    background-color: white;
+    height: 40px;
+    opacity: 0.6;
+    border-radius: 10px 0px 0px 10px;
+}
+.lv1{
+    list-style-type: none;
+    padding-top: 12px;
+}
+.lv1 li {
+    display: inline;
+    float: left;
+    padding: 0px 20px 0px 0px;
+    height: 27px;
+    font-weight: bold;
+}
+.lv1 li a,
+.lv1 li a:visited{
+    color: red;
+    text-decoration: none;
+}
+.lv1 li a:hover{
+    color: green;
+}
+.lv2{
+    display: none;
+    position: absolute;
+    padding: 0px;
+    margin-top: 5px;
+}
+.lv1 li:hover>.lv2{
+    display: block;
+}
+.lv2 li {
+    float: none;
+    position: relative;
+    display: block;
+    padding: 10px;
+    height: auto;
+    background-color: #ccc;
+}
+.lv2 li:hover{
+    background: #cc0;
+}

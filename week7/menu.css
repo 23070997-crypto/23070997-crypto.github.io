@@ -1,6 +1,12 @@
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: top;
+}
 .menu{
     width: 150px;
-    height: 32px;
+    height: 50px;
     display: table-cell;
     background: -webkit-linear-gradient(top,#333,#999,#000)repeat-x;
     border-radius: 20px 20px 0px 0px;
@@ -8,8 +14,37 @@
     text-align: center;
     text-transform: uppercase;
     vertical-align: middle;
+    ;
 }
-div ul{
-    color: #000;
+div{
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold
+}
 
+div ul{
+    background-color: white;
+    color: #000;
+    list-style: inside url(/week7/img/bullet.png);
+    text-align: left;
+    border: 1px solid black;
+    width: 148px;
+    margin: 0px;
+    padding: 0px;
+    box-shadow: 5px 5px 10px;
+    font-weight: normal;
+
+}
+div ul li {
+    padding: 5px;
+    width: 138px;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+div ul li:hover{
+    color: red;
+    background-color: yellow;
+    font-weight: bold;
 }
