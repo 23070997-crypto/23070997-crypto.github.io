@@ -1,9 +1,6 @@
 #header{
     background: url(/week7/images/header.jpg);
-    height: 181px;
-    width: 900px;
-    margin-left: 20%;
-    margin-right:25% ;
+    
 }
 #logo {
     padding: 20px 0px 0px 50px;
@@ -23,7 +20,7 @@
 .lv1 li {
     display: inline;
     float: left;
-    padding: 0px 20px 0px 0px;
+    padding: 0px 25px 0px 0px;
     height: 27px;
     font-weight: bold;
 }
@@ -54,4 +51,26 @@
 }
 .lv2 li:hover{
     background: #cc0;
+}
+#welcom{
+    border: dotted 2px #9c0;
+    padding: 8px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#center_content #left{
+    width: 500px;
+    min-height: 200px;
+    float: left;
+}
+.title{
+    color: #b81f22;
+    font-size: 17px;
+    float: left;
+    margin: 10px 10px 10px 15px;
+}
+.product{
+    border-bottom: dashed 1px #ccc;
+    float: left ;
 }
