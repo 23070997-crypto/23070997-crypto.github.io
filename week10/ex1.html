@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+</head>
+<body>
+    Number A:<input type="text" id="txta">
+    Number B:<input type="text" id="txtb">
+    <button onclick="Calculate()">Calculate </button>
+    <script>
+        function Calculate() {
+            var txta = document.getElementById("txta").value;
+            var txtb = document.getElementById("txtb").value;
+            if (txta == null || txta.trim() == "" || isNaN(txta)) {
+                alert("Number A is formatted incorrect");
+            } else if (txtb == null || txtb.trim() == "" || isNaN(txtb)) {
+                alert("Number B is formatted incorrect");
+            } else {
+                var result = parseFloat(txta) + parseFloat(txtb);
+                alert("Result:\n" + txta + " + " + txtb + " = " + result);
+            }
+        }
+    </script>
+</body>
