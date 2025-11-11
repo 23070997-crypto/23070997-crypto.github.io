@@ -11,13 +11,13 @@
         function update() {
             year=document.f.year;
             month=document.f.month;
-            day=document.f.day;
+            date=document.f.date;
             
             if (year.value=="" || isNaN(year.value)) {
                 date.value="Year must be a number";
                 year.focus();
             } else {
-                switch (moth.value) {
+                switch (month.value) {
                     case "1":
                     case "3":
                     case "5":
