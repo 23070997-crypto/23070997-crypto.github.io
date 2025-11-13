@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Mini calculator</title>
+<link rel="stylesheet" href="/week11/ex6.css">
+<script language="javascript">
+function calculate() {
+    var a = document.frmCal.txta;
+    var b = document.frmCal.txtb;
+    var o = document.frmCal.slto;
+    var r = document.frmCal.txtr;
+
+    var numberFormat = /^[+-]?\d+(\.\d+)?$/;
+
+    if (numberFormat.test(a.value) == false) {
+        alert("a must be a number!");
+        a.focus();
+        r.value = "";
+        return;  
+    } 
+    else if (numberFormat.test(b.value) == false) {
+        alert("b must be a number!");
+        b.focus();
+        r.value = "";
+        return;
+    } 
+    else if ((o.value == "/" || o.value == "%") && parseFloat(b.value) === 0) {
+        alert("b can't be 0!");
+        r.value = "";
+        b.focus();
+        r.value = "";
+        return;
+    } 
+    else {
+        var numA = parseFloat(a.value);
+        var numB = parseFloat(b.value);
+        var result;
+        switch (o.value) {
+            case "+":
+                result = numA + numB;
+                break;
+            case "-":
+                result = numA - numB;
+                break;
+            case "*":
+                result = numA * numB;
+                break;
+            case "/":
+                result = numA / numB;
+                break;
+            case "%":
+                result = numA % numB;
+                break;
+            case '^':
+                result = Math.pow(numA, numB);
+                break;
+            default:
+                result = "Invalid operator";
+        }
+        r.value=result
+    }
+}
+</script>
+</head>
+<body>
+<form name="frmCal">
+<table border="0" align="center">
+    <tr>
+        <td colspan="2" align="center">
+            <h2>MINI CALCULATOR</h2>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">a = </td>
+        <td><input name="txta" /></td>
+    </tr>
+    <tr>
+        <td align="right">b = </td>
+        <td><input name="txtb" /></td>
+    </tr>
+    <tr>
+        <td align="right">Operator: </td>
+        <td>
+            <select name="slto">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+                <option value="%">%</option>
+                <option value="^">^</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">Result: </td>
+        <td><input name="txtr" readonly /></td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center">
+            <input type="button" value="Calculate" onClick="calculate()">
+        </td>
+    </tr>
+</table>
+</form>
+</body>
+</html>
