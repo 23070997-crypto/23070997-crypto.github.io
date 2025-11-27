@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>1. Thay đổi nội dung thẻ &lt;p&gt; bằng innerHTML</h2>
+<p id="p1">Hello World!</p>
+<script>
+document.getElementById("p1").innerHTML = "New text!";
+</script>
+
+
+<h2>2. Thay đổi Heading bằng innerHTML</h2>
+<h1 id="id01">Old Heading</h1>
+<script>
+document.getElementById("id01").innerHTML = "New Heading";
+</script>
+
+
+<h2>3. Thay đổi ảnh bằng thuộc tính src</h2>
+<img id="myImage" src="/Ex1/images/apple.png" width="100">
+<script>
+document.getElementById("myImage").src = "/Ex1/images/banana.png";
+</script>
+
+
+<h2>4. Hiển thị ngày giờ bằng innerHTML</h2>
+<p id="demo"></p>
+<script>
+document.getElementById("demo").innerHTML = "Date : " + Date();
+</script>
+
+
+<h2>5. In trực tiếp vào HTML bằng document.write()</h2>
+<p>Đoạn văn phía trên</p>
+
+<script>
+document.write(Date());
+</script>
+
+<p>Đoạn văn phía dưới</p>
+
+</body>
+</html>
