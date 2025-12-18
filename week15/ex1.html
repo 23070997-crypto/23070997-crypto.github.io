@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <link rel="stylesheet" href="ex1_style.css">
+</head>
+
+<body>
+
+<form id="form">
+  <h3>Register</h3>
+
+  <input type="text" id="username" placeholder="Username">
+  <small id="userErr"></small>
+
+  <input type="password" id="password" placeholder="Password">
+  <div id="strength"></div>
+  <small id="passErr"></small>
+
+  <input type="file" id="image" accept=".jpg,.png">
+  <small id="imgErr"></small>
+
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+  const u = username;
+  const p = password;
+  const i = image;
+
+  // Password strength
+  p.oninput = () => {
+    let hasLetter = /[a-zA-Z]/.test(p.value);
+    let hasNumber = /[0-9]/.test(p.value);
+
+    if (p.value.length < 6 ) {
+    strength.textContent = "Weak";
+    strength.style.color = "red";
+    } 
+    else if (p.value.length >= 8 && hasLetter && hasNumber) {
+      strength.textContent = "Strong";
+      strength.style.color = "green";
+    } 
+    else if (hasLetter || hasNumber) {
+      strength.textContent = "Medium";
+      strength.style.color = "orange";
+    } 
+    else {
+      strength.textContent = "";
+    }
+  };
+
+  // Submit
+  form.onsubmit = e => {
+    e.preventDefault();
+    let ok = true;
+
+    userErr.textContent =
+      u.value.length < 5 || u.value.length > 15 ? "Username 5–15 chars" : "";
+
+    passErr.textContent =
+      !(/[a-zA-Z]/.test(p.value) && /[0-9]/.test(p.value))
+        ? "Password needs letters & numbers"
+        : "";
+
+    imgErr.textContent =
+      !i.files[0] || !["image/jpeg","image/png"].includes(i.files[0].type)
+        ? "Only JPG or PNG"
+        : "";
+
+    if (!userErr.textContent && !passErr.textContent && !imgErr.textContent)
+      alert("Done!");
+  };
+</script>
+
+
+</body>
+</html>
