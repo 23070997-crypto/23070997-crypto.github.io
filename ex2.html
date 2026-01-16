@@ -1,0 +1,87 @@
+<!--create section for appetizes, main, deser and drink của menu, 
+sau đó add price with currency sumbol (&ge;), style section with nền khác màu và thêm 
+Filter menu mà toggles between showing all items or only vegetarian option, use filterMenu()
+ and getElementsByClassName()-->
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant menu</title>
+    <link rel="stylesheet" href="ex2.css">
+    <script>
+        function filterMenu(){
+        const vegetarianItems = document.getElementsByClassName('vegetarian');
+        const nonVegetarianItems = document.getElementsByClassName('non-vegetarian');
+        
+        for (let item of nonVegetarianItems) {
+                item.classList.toggle('hidden');
+            }
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <a href="#">Appetizers &</a> -
+        <a href="#">Main Course &copy;</a> -
+        <a href="#">Desserts &trade;</a> -
+        <a href="#">Drinks</a>
+    </nav>
+    <button class="btn" onclick="filterMenu()">Filter Menu</button>
+
+    <section>
+        <h2>Appetizers</h2>
+        <table>
+            <tr class="vegetarian">
+                <td>chay</td>
+                <td class="price">&ge;10</td>
+            </tr>
+            <tr class="non-vegetarian">
+                <td>không</td>
+                <td class="price">&ge;9</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>Main Course</h2>
+        <table>
+            <tr class="vegetarian">
+                <td>chay</td>
+                <td class="price">&ge;8</td>
+            </tr>
+            <tr class="non-vegetarian">
+                <td>không</td>
+                <td class="price">&ge;7</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>Desserts</h2>
+        <table>
+            <tr class="vegetarian">
+                <td>chay</td>
+                <td class="price">&ge;6</td>
+            </tr>
+            <tr class="non-vegetarian">
+                <td>không</td>
+                <td class="price">&ge;5</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>Drinks</h2>
+        <table>
+            <tr class="vegetarian">
+                <td>chay</td>
+                <td class="price">&ge;4</td>
+            </tr>
+            <tr class="non-vegetarian">
+                <td>không</td>
+                <td class="price">&ge;3</td>
+            </tr>
+        </table>
+    </section>
+    </body>
+</html>

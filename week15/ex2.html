@@ -1,0 +1,72 @@
+<!-- Exercise 2: Create a computer parts price list table with these requirements:
+1. Create table with 4 computer parts and prices
+2. Use HTML5 structure (DOCTYPE, head, body)
+3. Include these HTML entities: ©, ™, •
+4. Style table with borders and padding
+5. Add "Change Color" button that:
+o When clicked, changes all table text to red
+o Use changeColor() function and getElementById() -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Parts Price List</title>
+</head>
+<body>
+    <h2>Computer Parts Price List © </h2>
+    <table id="priceTable">
+            <tr>
+                <th>Part™</th>
+                <th>Price ($)</th>
+            </tr>
+            <tr>
+                <td>CPU</td>
+                <td>250</td>
+            </tr>
+            <tr>
+                <td>Motherboard</td>
+                <td>150</td>
+            </tr>
+            <tr>
+                <td>RAM (16GB)</td>
+                <td>80</td>
+            </tr>
+            <tr>
+                <td>SSD (1TB)</td>
+                <td>120</td>
+            </tr>
+            <tr>
+                <td>GPU</td>
+                <td>400</td>
+            </tr>
+    </table> 
+    <style>
+        table {
+            border-collapse: collapse;
+            text-align: left;
+            width: 50%;
+            color: black;
+
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+        </style>
+    <button onclick="changeColor()">Change Color</button>
+    <script>
+         let color = "black";
+
+        function changeColor() {
+            if (color === "black") {
+             color = "red";
+            } else {
+                color = "black";
+            }
+        document.getElementById("priceTable").style.color = color;
+        }
+    </script>
+   
+</body>
+</html>

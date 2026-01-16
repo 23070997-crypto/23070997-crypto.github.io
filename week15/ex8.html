@@ -1,0 +1,112 @@
+<!-- Exercise 8: Create a newsletter subscription system with these requirements:
+1. Include these elements:
+o Full Name (text input)
+o Email (email input)
+o Subscription Type (radio buttons: Monthly/Yearly)
+o Interests (checkboxes)
+2. Add form validation with these rules:
+o Email must contain @ and domain
+o At least one interest must be selected
+3. Style form with CSS Grid layout
+4. Show success message when form is valid -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Newsletter Subscription</title>
+
+    <style>
+        form {
+            width: 400px;
+            border: 1px solid #333;
+            padding: 15px;
+            display: grid;
+            grid-template-columns: 1fr;
+            row-gap: 10px;
+        }
+
+        .group {
+            display: grid;
+            row-gap: 5px;
+        }
+
+        button {
+            width: 150px;
+            padding: 6px;
+        }
+
+        .message {
+            font-weight: bold;
+        }
+    </style>
+
+    <script>
+        function validateForm() {
+            let email = document.getElementById("email").value;
+            let interests = document.getElementsByClassName("interest");
+            let interestChecked = false;
+
+            // check email contains @ and domain
+            if (!email.includes("@") || !email.includes(".")) {
+                showMessage("Invalid email address!", "red");
+                return;
+            }
+
+            // check at least one interest
+            for (let i = 0; i < interests.length; i++) {
+                if (interests[i].checked) {
+                    interestChecked = true;
+                }
+            }
+
+            if (!interestChecked) {
+                showMessage("Please select at least one interest.", "red");
+                return;
+            }
+
+            showMessage("Subscription successful!", "green");
+        }
+
+        function showMessage(text, color) {
+            let msg = document.getElementById("result");
+            msg.textContent = text;
+            msg.style.color = color;
+        }
+    </script>
+</head>
+
+<body>
+
+    <form onsubmit="event.preventDefault(); validateForm();">
+
+        <div class="group">
+            <label>Full Name</label>
+            <input type="text">
+        </div>
+
+        <div class="group">
+            <label>Email</label>
+            <input type="email" id="email">
+        </div>
+
+        <div class="group">
+            <label>Subscription Type</label>
+            <label><input type="radio" name="sub"> Monthly</label>
+            <label><input type="radio" name="sub"> Yearly</label>
+        </div>
+
+        <div class="group">
+            <label>Interests</label>
+            <label><input type="checkbox" class="interest"> Technology</label>
+            <label><input type="checkbox" class="interest"> Business</label>
+            <label><input type="checkbox" class="interest"> Design</label>
+        </div>
+
+        <button type="submit">Subscribe</button>
+
+        <div id="result" class="message"></div>
+
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer parts price list</title>
+</head>
+<body>
+    <h1>Computer parts price list</h1>
+    <table id="priceTable">
+        <tr>
+            <th>Part™</th>
+            <th>Price ($)</th>
+        </tr>
+        <tr>
+            <td>CPU</td>
+            <td>250</td>
+        </tr>
+        <tr>
+            <td>Motherboard</td>
+            <td>150</td>
+        </tr>
+        <tr>
+            <td>RAM (16GB)</td>
+            <td>80</td>
+        </tr>
+        <tr>
+            <td>SSD (1TB)</td>
+            <td>120</td>
+        </tr>
+    <style>
+        table {
+            border-collapse: collapse;
+            text-align: left;
+            width: 50%;
+            color: black;
+
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+        
+    </style>
+    <script>
+         let color = "black";
+
+        function changeColor() {
+            if (color === "black") {
+             color = "red";
+            } else {
+                color = "black";
+            }
+        document.getElementById("priceTable").style.color = color;
+        }
+    </script>
+</html>

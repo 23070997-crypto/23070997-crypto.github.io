@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Final Exercise 3</title>
+    <style>
+        form {
+            color: black;
+            background-color: rgba(197, 196, 196, 0.6);
+            backdrop-filter: blur(6px);
+            max-width: 250px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        label { 
+            display:block; 
+            margin-top:8px;
+            font-weight: bolder;
+            }
+        input[type="text"], input[type="email"]{
+            width: 95%;
+            padding:6px;
+            margin-top:6px;
+            border:1px solid #878686;
+            border-radius:4px
+        }
+        button  {
+            margin-top:10px;
+            padding:10px;
+            width:100%;
+            background-color:#4CAF50;
+            color:white;
+            border-radius:4px;
+            cursor:pointer;
+            transition: background-color 0.15s ease;
+        }
+        button:hover { background-color:#0d4f10 }
+    </style>
+    <script>
+        function validateForm() {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const subscription = document.querySelector('input[name="subscription"]:checked');
+        const interests = document.querySelectorAll('input[name="interest"]:checked');
+
+        if (name.length < 3) {
+            alert("Name must be at least 3 characters long.");
+            return false;
+        }
+
+        alert("Done!");
+        return true;
+    }
+    </script>
+</head>
+
+<body>
+    <h3>Newsletter Subcription</h3>
+    <form onsubmit="return validateForm()">
+        <label>Full name</label>
+        <input type="text" id="name">
+            
+        <label>Email:</label>
+        <input type="email" id="email">
+            
+        <div class="subscription" id="subcription">
+            <label>Subscription Type</label>
+            <input type="radio" name="subscription" value="monthly"> Monthly
+            <input type="radio" name="subscription" value="yearly"> Yearly
+        </div>
+
+        <div class="interests" id="interest">
+            <label>Interests</label>
+            <input type="checkbox" name="interest" value="sports"> Sports
+            <input type="checkbox" name="interest" value="music"> Music
+            <input type="checkbox" name="interest" value="movies"> Movies
+        </div>
+
+        <button type="submit">Subscribe</button>
+    </form>
+</body>
+
+</html>

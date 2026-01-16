@@ -1,0 +1,97 @@
+<!-- Exercise 5: Create a tabbed content interface with these requirements:
+1. Create 4 tabs: Features ®, Pricing €, Reviews, Support
+2. Add arrow icons (→) to indicate active tab
+3. Style tabs with different states (active/inactive)
+4. Add tab functionality that:
+o Shows corresponding content when tab is clicked
+o Use switchTab() function
+o Use classList.add() and classList.remove() -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabbed Interface</title>
+
+    <style>
+        /* Tabs */
+        .tab {
+            display: inline-block;
+            padding: 10px 15px;
+            border: 1px solid #333;
+            cursor: pointer;
+            background-color: #eee;
+        }
+
+        .tab.active {
+            background-color: #333;
+            color: white;
+        }
+
+        /* Content */
+        .content {
+            display: none;
+            border: 1px solid #333;
+            padding: 15px;
+            margin-top: 10px;
+        }
+
+        .content.active {
+            display: block;
+        }
+    </style>
+
+    <script>
+        function switchTab(tabId) {
+            let tabs = document.getElementsByClassName("tab");
+            let contents = document.getElementsByClassName("content");
+
+            // remove active from all
+            for (let i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("active");
+                contents[i].classList.remove("active");
+            }
+
+            // add active to selected
+            document.getElementById(tabId + "-tab").classList.add("active");
+            document.getElementById(tabId).classList.add("active");
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- Tabs -->
+    <div>
+        <div id="features-tab" class="tab active" onclick="switchTab('features')">
+            → Features ®
+        </div>
+        <div id="pricing-tab" class="tab" onclick="switchTab('pricing')">
+            Pricing €
+        </div>
+        <div id="reviews-tab" class="tab" onclick="switchTab('reviews')">
+            Reviews
+        </div>
+        <div id="support-tab" class="tab" onclick="switchTab('support')">
+            Support
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div id="features" class="content active">
+        This section shows product features.
+    </div>
+
+    <div id="pricing" class="content">
+        This section shows pricing details.
+    </div>
+
+    <div id="reviews" class="content">
+        This section shows customer reviews.
+    </div>
+
+    <div id="support" class="content">
+        This section shows support information.
+    </div>
+
+</body>
+</html>

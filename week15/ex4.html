@@ -1,0 +1,67 @@
+<!-- Exercise 4: Create a restaurant menu interface with these requirements:
+1. Create sections for: Appetizers ®, Main Course §, Desserts, Drinks
+2. Add prices with currency symbol (≥)
+3. Add "Filter Menu" button that:
+o Toggles between showing all items or only vegetarian options
+o Use filterMenu() function
+o Use getElementsByClassName() -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant Menu</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .menu-item {
+            margin-left: 20px;
+        }
+    </style>
+
+    <script>
+        let showVegOnly = false;
+
+        function filterMenu() {
+            let items = document.getElementsByClassName("menu-item");
+
+            for (let i = 0; i < items.length; i++) {
+                if (showVegOnly && !items[i].classList.contains("veg")) {
+                    items[i].style.display = "none";
+                } else {
+                    items[i].style.display = "block";
+                }
+            }
+
+            showVegOnly = !showVegOnly;
+        }
+    </script>
+</head>
+
+<body>
+
+    <h2>Appetizers ®</h2>
+    <p class="menu-item veg">Salad ≥ $5</p>
+    <p class="menu-item">Chicken Wings ≥ $7</p>
+
+    <h2>Main Course §</h2>
+    <p class="menu-item veg">Vegetable Pasta ≥ $10</p>
+    <p class="menu-item">Beef Steak ≥ $15</p>
+
+    <h2>Desserts</h2>
+    <p class="menu-item veg">Fruit Cake ≥ $6</p>
+    <p class="menu-item">Ice Cream ≥ $4</p>
+
+    <h2>Drinks</h2>
+    <p class="menu-item veg">Orange Juice ≥ $3</p>
+    <p class="menu-item">Coffee ≥ $2</p>
+
+    <br>
+
+    <button onclick="filterMenu()">Filter Menu</button>
+
+</body>
+</html>
+        

@@ -1,0 +1,83 @@
+<!-- Exercise 7: Create a simple contact form with these requirements:
+1. Include these fields:
+o Name (text input)
+o Email (email input)
+o Message (textarea)
+2. Add proper labels and submit button
+3. Style form with proper spacing and borders
+4. Add basic validation:
+o Check if fields are empty
+o Show success message when all filled -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Form</title>
+
+    <style>
+        form {
+            width: 300px;
+            border: 1px solid #333;
+            padding: 15px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input, textarea {
+            width: 95%;
+            padding: 6px;
+            margin-top: 5px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 6px 10px;
+        }
+
+        .message {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+
+    <script>
+        function validateForm() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let message = document.getElementById("msg").value;
+
+            if (name === "" || email === "" || message === "") {
+                document.getElementById("result").textContent =
+                    "Please fill in all fields.";
+                document.getElementById("result").style.color = "red";
+            } else {
+                document.getElementById("result").textContent =
+                    "Form submitted successfully!";
+                document.getElementById("result").style.color = "green";
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <form onsubmit="event.preventDefault(); validateForm();">
+        <label for="name">Name</label>
+        <input type="text" id="name">
+
+        <label for="email">Email</label>
+        <input type="email" id="email">
+
+        <label for="msg">Message</label>
+        <textarea id="msg"></textarea>
+
+        <button type="submit">Submit</button>
+
+        <div id="result" class="message"></div>
+    </form>
+
+</body>
+</html>

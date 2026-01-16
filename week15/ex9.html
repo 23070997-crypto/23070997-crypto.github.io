@@ -1,0 +1,98 @@
+<!-- Exercise 9: Create a product showcase with these requirements:
+1. Create a grid of 4 product cards showing:
+o Product name
+o Price
+o Short description
+2. Use HTML5 structure (DOCTYPE, head, body)
+3. Include these HTML entities: ®, €, →
+4. Style cards with box-shadow and hover effects
+5. Add "Toggle Price" button that:
+o When clicked, hides all prices
+o Use togglePrice() function and getElementsByClassName() -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Showcase</title>
+
+    <style>
+        /* Grid layout */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        /* Product card */
+        .card {
+            border: 1px solid #ccc;
+            padding: 15px;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 4px 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .price {
+            font-weight: bold;
+            color: green;
+        }
+
+        button {
+            margin: 15px 0;
+            padding: 6px 12px;
+        }
+    </style>
+
+    <script>
+        function togglePrice() {
+            let prices = document.getElementsByClassName("price");
+
+            for (let i = 0; i < prices.length; i++) {
+                if (prices[i].style.display === "none") {
+                    prices[i].style.display = "block";
+                } else {
+                    prices[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <h2>Product Showcase ®</h2>
+
+    <button onclick="togglePrice()">Toggle Price →</button>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Product A</h3>
+            <p class="price">€50</p>
+            <p>High quality product.</p>
+        </div>
+
+        <div class="card">
+            <h3>Product B</h3>
+            <p class="price">€70</p>
+            <p>Best seller item.</p>
+        </div>
+
+        <div class="card">
+            <h3>Product C</h3>
+            <p class="price">€40</p>
+            <p>Affordable and reliable.</p>
+        </div>
+
+        <div class="card">
+            <h3>Product D</h3>
+            <p class="price">€90</p>
+            <p>Premium quality product.</p>
+        </div>
+    </div>
+
+</body>
+</html>

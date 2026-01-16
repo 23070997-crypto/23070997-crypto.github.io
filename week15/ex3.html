@@ -1,0 +1,82 @@
+<!-- Exercise 3: Create a student grade calculator with these requirements:
+1. Create a table showing 4 subjects and grades
+2. Use HTML5 structure (DOCTYPE, head, body)
+3. Include these HTML entities: ®, §, ≥
+4. Style table with alternating row colors
+5. Add "Calculate Average" button that:
+o When clicked, calculates and displays average grade
+o Use calculateAverage() function and querySelectorAll()-->
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Grade Calculator</title>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+
+        /* alternating row colors */
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+
+    <script>
+        function calculateAverage() {
+            let grades = document.querySelectorAll(".grade");
+            let sum = 0;
+
+            for (let i = 0; i < grades.length; i++) {
+                sum += Number(grades[i].textContent);
+            }
+
+            let average = sum / grades.length;
+            document.getElementById("result").textContent =
+                "Average Grade ≥ " + average.toFixed(2);
+        }
+    </script>
+</head>
+
+<body>
+
+    <h2>Student Grades ®</h2>
+
+    <table>
+        <tr>
+            <th>Subject §</th>
+            <th>Grade</th>
+        </tr>
+        <tr>
+            <td>Math</td>
+            <td class="grade">85</td>
+        </tr>
+        <tr>
+            <td>Physics</td>
+            <td class="grade">90</td>
+        </tr>
+        <tr>
+            <td>Chemistry</td>
+            <td class="grade">78</td>
+        </tr>
+        <tr>
+            <td>English</td>
+            <td class="grade">88</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <button onclick="calculateAverage()">Calculate Average</button>
+
+    <p id="result"></p>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <title>Final Exercise 1</title>
+    <style>
+        table tr:nth-child(even) {
+            background-color: whitesmoke;
+        }
+        table tr:nth-child(odd) {
+            background-color: lightgray;
+        }
+        #averageResult {
+            color: red;
+        }
+    </style>
+    <script>
+        function calculateAverage() {
+            let total = 10 + 9 + 8 + 7;
+            let average = (total/4).toFixed(2);
+            document.getElementById('averageResult').textContent = `Average Grade: ${average}`;
+        }
+    </script>
+</head>
+<body>
+    <h1>Student grade</h1>
+    <table id="studentGrade">
+        <tr>
+            <th>Subject &R;</th>
+            <th>Grade &ge;</th>
+        </tr>
+        <tr>
+            <td>Subject 1</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>Subject 2</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td>Subject 3</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>Subject 4</td>
+            <td>7</td>
+        </tr>
+    </table>
+    <button onclick="calculateAverage()">Calculate Average</button>
+    <p id="averageResult"></p>
+</body>
+</html>
